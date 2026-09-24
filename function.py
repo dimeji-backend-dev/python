@@ -29,7 +29,10 @@ for i in range(5):
                 and requirements[2].count(True) >= 2
                 and requirements[3].count(True) >= 2
             ):
-                print(otp)
+                return True
+            else:
+                return False
 
-        requirement(requirements)
-        break
+        if requirement(requirements) == True:
+            print (otp)
+            break
