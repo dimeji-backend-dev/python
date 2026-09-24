@@ -44,8 +44,10 @@ while True:
         break
     except ValueError:
         print("Please enter a number: ")
+        print()
 
+print("\nPassword Generated")
 for i in range(how_many):
     password = generate_password()
-    print(password)
+    print(f"{i + 1}: {password}")
     
