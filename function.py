@@ -27,11 +27,15 @@ def requirement(requirements):
     else:
         return False
 
+def generate_password():
+        while True:
+            otp = "".join(random.choices(combo, k=16))
+            requirements = checks(otp)
+            result = requirement(requirements)
+            if result == True:
+                return otp
+
 for i in range(5):
-    while True:
-        otp = "".join(random.choices(combo, k=16))
-        requirements = checks(otp)
-        result = requirement(requirements)
-        if result == True:
-            print (otp)
-            break
+    password = generate_password()
+    print(password)
+    
