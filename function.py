@@ -34,8 +34,18 @@ def generate_password():
             result = requirement(requirements)
             if result == True:
                 return otp
+while True:
+    try:           
+        how_many = int(input("how many password do you want? "))
+        if how_many <= 0:
+            print("Please enter greater than 0: ")
+            print()
+            continue
+        break
+    except ValueError:
+        print("Please enter a number: ")
 
-for i in range(5):
+for i in range(how_many):
     password = generate_password()
     print(password)
     
