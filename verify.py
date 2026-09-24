@@ -1,22 +1,16 @@
 import string
 import random
 
-cars = ["volvo","benz","toyota","bugatti","honda"]
+cars = ["volvo","benz","toyota","bugatti","honda","wolkswagen","ferari","BYD"]
 number = string.digits + string.ascii_lowercase + string.ascii_uppercase
 
 unique_rand = set()
-while len(unique_rand) < 5:
+while len(unique_rand) < len(cars):
     rand = "".join(random.choices(number, k=6))
     unique_rand.add(rand)
 
-unique_id = list(i for i in unique_rand)
+unique_id = list(unique_rand)
 
-stock = {
-            unique_id[0]:cars[0],
-            unique_id[1]:cars[1],
-            unique_id[2]:cars[2],
-            unique_id[3]:cars[3],
-            unique_id[4]:cars[4]
-        }
+stock = dict(zip(unique_id, cars))
 
 print(stock)
